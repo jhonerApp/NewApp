@@ -224,11 +224,11 @@ function HomeScreen(props) {
             showsUserLocation={true}
             showsMyLocationButton={true}
             showsBuildings={true}
-            minZoomLevel={16}
-            maxZoomLevel={50}
-            onRegionChangeComplete={region => {
-              setZoom(Math.round(Math.log(360 / region.latitudeDelta) / Math.LN2))
-            }}
+            // minZoomLevel={16}
+            // maxZoomLevel={50}
+            // onRegionChangeComplete={region => {
+            //   setZoom(Math.round(Math.log(360 / region.latitudeDelta) / Math.LN2))
+            // }}
           >
 
 

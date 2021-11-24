@@ -23,8 +23,9 @@ function HeaderHistory(props) {
             borderBottomLeftRadius: 30,
             borderBottomRightRadius: 30,
             flexDirection: 'column',
+            paddingTop: 40
         }} >
-            <View>
+            <View style={{ paddingBottom: 20 }}>
                 <Text style={{ fontFamily: 'Montserrat-Bold', color: 'white', textAlign: 'center', fontSize: 27, paddingTop: 40, paddingBottom: 12 }}>Package History</Text>
             </View>
             <View

@@ -12,6 +12,10 @@ import Profile from '../screens/ProfileScreen'
 
 //User
 import MyParcel from './User/MyParcel';
+import PackageHistory from './User/PackageHistory';
+
+
+
 import PackageHistoryScreen from '../screens/User/PackageHistoryScreen';
 
 //Header
@@ -41,7 +45,7 @@ const TabButton = (props) => {
 const TabArr = [
     { id: 1, route: 'Home1', label: 'My Parcel', type: Ionicons, activeIcon: 'grid', inActiveIcon: 'grid-outline', component: MyParcel },
     { id: 4, route: 'Home', label: 'PROFILE', type: FontAwesome, activeIcon: 'user-circle-o', inActiveIcon: 'user-circle', component: Home },
-    { id: 3, route: 'Delivery History', label: 'HISTORY', type: Ionicons, activeIcon: 'newspaper', inActiveIcon: 'newspaper-outline', component: PackageHistoryScreen },
+    { id: 3, route: 'PackageHistory', label: 'Package History', type: Ionicons, activeIcon: 'newspaper', inActiveIcon: 'newspaper-outline', component: PackageHistory },
 
 ];
 
