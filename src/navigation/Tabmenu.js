@@ -21,6 +21,7 @@ import PackageHistoryScreen from '../screens/User/PackageHistoryScreen';
 
 //Header
 import HeaderParcel from '../components/Header/User/HeaderParcel';
+import ProfileScreen from '../screens/ProfileScreen';
 
 import { Fragment } from 'react';
 import { width } from 'styled-system';
@@ -52,8 +53,9 @@ const TabButton = (props) => {
 
 //Driver
 const TabArr = [
-    { id: 1, route: 'Home1', label: 'My Parcel', type: Ionicons, activeIcon: 'grid', inActiveIcon: 'grid-outline', component: MyHome },
-    { id: 4, route: 'Home', label: 'PROFILE', type: FontAwesome, activeIcon: 'user-circle-o', inActiveIcon: 'user-circle', component: Home },
+    { id: 4, route: 'Account', label: 'Account', type: FontAwesome, activeIcon: 'user-circle-o', inActiveIcon: 'user-circle', component: ProfileScreen },
+    { id: 1, route: 'Home', label: 'Home', type: Ionicons, activeIcon: 'grid', inActiveIcon: 'grid-outline', component: MyHome },
+
     { id: 3, route: 'PackageHistory', label: 'Package History', type: Ionicons, activeIcon: 'newspaper', inActiveIcon: 'newspaper-outline', component: PackageHistory },
 
 ];

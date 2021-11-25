@@ -7,42 +7,31 @@ import {
     FontAwesome,
     MaterialIcons
 } from '@expo/vector-icons';
-import { TouchableOpacity, FlatList } from 'react-native';
+import { TouchableOpacity } from 'react-native';
 import {
     Stack,
-    Container,
-    Button,
-    HStack,
-    IconButton,
-    NativeBaseProvider,
     Text,
-    Input,
     Flex,
-    Center,
     View,
     ScrollView,
     Divider,
-    Avatar,
     Image,
-    Box,
-    VStack
+
 } from 'native-base';
-import BaseProvider from '../components/BaseProvider';
+
 import StepIndicator from 'react-native-step-indicator';
-import { borderRadius, paddingTop } from 'styled-system';
 
+import boxIconCurrent from '../../../assets/iconTracker/icons8-trolley-50.png'
+import boxIconFinish from '../../../assets/iconTracker/icons8-trolleycomplete-50.png'
 
-import boxIconCurrent from '../../assets/iconTracker/icons8-trolley-50.png'
-import boxIconFinish from '../../assets/iconTracker/icons8-trolleycomplete-50.png'
+import wayIconCurrent from '../../../assets/iconTracker/icons8-tracking-50.png'
+import wayIconFinish from '../../../assets/iconTracker/icons8-trackingcomplete-50.png'
 
-import wayIconCurrent from '../../assets/iconTracker/icons8-tracking-50.png'
-import wayIconFinish from '../../assets/iconTracker/icons8-trackingcomplete-50.png'
+import truckIconCurrent from '../../../assets/iconTracker/icons8-truck-50.png'
+import truckIconFinish from '../../../assets/iconTracker/icons8-shipped-50.png'
 
-import truckIconCurrent from '../../assets/iconTracker/icons8-truck-50.png'
-import truckIconFinish from '../../assets/iconTracker/icons8-shipped-50.png'
-
-import pickupIcon from '../../assets/iconTracker/icons8-map-point-64.png'
-import dropIcon from '../../assets/iconTracker/icons8-pickup-point-128.png'
+import pickupIcon from '../../../assets/iconTracker/icons8-map-point-64.png'
+import dropIcon from '../../../assets/iconTracker/icons8-pickup-point-128.png'
 
 
 //icons8-delivered-64
@@ -118,6 +107,7 @@ const customStyles = {
 
 function DeliveryStatusScreen(props) {
 
+    console.log('DeliveryStatusScreen props', props)
     const [currentPage, setCurrentPage] = useState(0)
 
     const nextStep = () => {
@@ -125,65 +115,12 @@ function DeliveryStatusScreen(props) {
 
     }
     return (
-        <BaseProvider>
-            <View
-                style={{
-                    width: '100%',
-                    height: '35%',
-                    position: 'absolute',
-                    backgroundColor: "#212F3D",
-                    borderBottomLeftRadius: 80,
-                    borderBottomRightRadius: 80,
-                    paddingTop: 50,
-                    flexDirection: 'column',
-
-
-                }}
-            >
-
-                <View style={{ paddingBottom: 30, justifyContent: 'flex-start', flexDirection: 'column' }}>
-
-                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingBottom: 15 }}>
-                        <ButtonM style={{ paddingLeft: 20 }} navigate={props} />
-
-                        <Text style={{ fontFamily: 'Montserrat-Bold', color: 'white', paddingRight: 20, fontSize: 20, }}>Delivery Today</Text>
-                    </View>
-
-                    <View
-                        style={{
-                            flexDirection: 'column',
-                            paddingTop: 10,
-
-                        }}
-                    >
-                        <Text style={{ fontFamily: 'Montserrat-Bold', color: 'white', alignSelf: 'center' }}>Estimated Delivery Time</Text>
-                        <Text style={{ fontFamily: 'Montserrat-Bold', color: 'white', alignSelf: 'center' }}>2 Hrs</Text>
-                        {/* <Input
-                            placeholder="Search for delivery"
-                            fontSize="14"
-                            width="95%"
-
-                        />
-                        <View style={{ paddingLeft: 10 }}>
-                            <IconButton
-                                colorScheme="darkBlue"
-                                variant="solid"
-                                _icon={{
-                                    as: AntDesign,
-                                    name: 'search1',
-                                }}
-                            />
-                        </View> */}
-                    </View>
-                </View>
-            </View>
-
+        <Fragment>
             <View style={{
                 flex: 1,
                 position: 'relative',
                 width: '100%',
-                top: 165,
-
+                top: 10,
 
             }}>
 
@@ -220,7 +157,13 @@ function DeliveryStatusScreen(props) {
                                 }}
                             >
 
-                                <View style={{ flexDirection: 'column', flex: 1 }}>
+                                <View style={{ flex: 1 }}>
+                                    <View style={{ flexDirection: 'column', margin: 10, }}>
+                                        <Text style={{ fontFamily: 'Montserrat-Bold', alignSelf: 'center' }}>Estimated Delivery Time</Text>
+                                        <Text style={{ fontFamily: 'Montserrat-Bold', alignSelf: 'center', color:'green' }}>2 Hrs</Text>
+
+                                    </View>
+                                    <Divider />
                                     <View
                                         style={{
                                             flexDirection: 'row',
@@ -235,6 +178,8 @@ function DeliveryStatusScreen(props) {
                                             June 21,2021
                                         </Text>
                                     </View>
+
+
                                     <Divider />
                                     <Flex style={{ flexDirection: 'column', flex: 1 }}>
                                         <View style={{ flexDirection: 'column', paddingLeft: 15, paddingTop: 10 }}>
@@ -370,15 +315,9 @@ function DeliveryStatusScreen(props) {
 
                         </View>
                     </View>
-
-
                 </ScrollView>
-
             </View>
-
-
-
-        </BaseProvider >
+        </Fragment>
     )
 }
 

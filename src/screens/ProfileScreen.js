@@ -3,11 +3,9 @@ import {
     Ionicons,
     AntDesign,
     MaterialCommunityIcons,
-    MaterialIcons,
-    FontAwesome,
     Feather
 } from '@expo/vector-icons';
-import { TouchableOpacity, StyleSheet, ImageBackground } from 'react-native';
+import { TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
 import {
     Stack,
     Container,
@@ -16,17 +14,9 @@ import {
     IconButton,
     NativeBaseProvider,
     Text,
-    Input,
     Flex,
-    Center,
     View,
-    Icon,
     ScrollView,
-    Divider,
-    Image,
-    VStack,
-    ZStack,
-    Box,
     Avatar,
     Circle
 
@@ -35,9 +25,16 @@ import {
 } from 'native-base';
 import BaseProvider from '../components/BaseProvider'
 import pickupIcon from '../../assets/iconTracker/icons8-map-point-64.png'
+import { height } from 'styled-system';
 
 
 function ProfileScreen(props) {
+
+    const DeviceHeight = Dimensions.get('screen').height
+    const DeviceWitdh = Dimensions.get('screen').width
+
+    console.log('DeviceHeight', DeviceHeight)
+    console.log('DeviceWitdh', DeviceWitdh)
 
 
     const pressButton = (e) => {
@@ -73,7 +70,10 @@ function ProfileScreen(props) {
                 </Stack>
             </View>
 
-            <View style={{ flex: 1, backgroundColor: '#ECF0F1' }}>
+            <View style={{
+                flex: 1, backgroundColor: '#ECF0F1',
+
+            }}>
                 <Stack style={{ alignItems: 'center', paddingTop: 5, backgroundColor: '#ECF0F1' }}>
 
                     <Avatar
@@ -108,7 +108,9 @@ function ProfileScreen(props) {
                 </Stack>
 
 
-                <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
+                <View onLayout={(event) => console.log('event', event)} style={{
+                    flex: 1, flexDirection: 'column', justifyContent: 'center',
+                }}>
 
 
 
@@ -181,7 +183,6 @@ function ProfileScreen(props) {
 
                                                 paddingTop: 10,
                                                 flex: 1,
-
                                             }}
                                         >
 
@@ -216,11 +217,10 @@ function ProfileScreen(props) {
 
                                                 paddingTop: 10,
                                                 flex: 1,
-
                                             }}
                                         >
 
-                                            <Flex style={{ flexDirection: 'column', justifyContent: 'space-between', margin:4 }}>
+                                            <Flex style={{ flexDirection: 'column', justifyContent: 'space-between', margin: 4 }}>
                                                 <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingTop: 5, paddingLeft: 15, paddingBottom: 10 }}>
                                                     <View style={{ flexDirection: 'row', }}>
                                                         <Ionicons
@@ -249,7 +249,7 @@ function ProfileScreen(props) {
 
                     </Stack>
                 </View>
-                
+
             </View>
 
         </BaseProvider>
