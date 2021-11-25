@@ -17,16 +17,16 @@ import {
     Image,
     IconButton
 } from 'native-base';
-import BaseProvider from '../components/BaseProvider';
+import BaseProvider from '../../components/BaseProvider';
 
-import pickupIcon from '../../assets/iconTracker/icons8-map-point-64.png'
-import dropIcon from '../../assets/iconTracker/icons8-pickup-point-128.png'
-import deliveryIcon from '../../assets/iconTracker/imageedit_9_3739506774.png'
+import pickupIcon from '../../../assets/iconTracker/icons8-map-point-64.png'
+import dropIcon from '../../../assets/iconTracker/icons8-pickup-point-128.png'
+// import deliveryIcon from '../../../assets/iconTracker/imageedit_9_3739506774.png'
 
 
-import BackButton from '../components/BackButton'
-import HeaderProvider from '../components/HeaderProvider'
-import { height, width } from 'styled-system';
+// import BackButton from '../../components/BackButton'
+// import HeaderProvider from '../../components/HeaderProvider'
+// import { height, width } from 'styled-system';
 
 // function ButtonM(props) {
 //     return (

@@ -4,14 +4,14 @@ import { Text, View, Flex, Button, Heading, Divider, Stack, ScrollView, IconButt
 
 import { Ionicons, AntDesign, MaterialCommunityIcons } from '@expo/vector-icons';
 import { StyleSheet, TouchableOpacity, Image } from 'react-native'
-import BaseProvider from '../components/BaseProvider'
+import BaseProvider from '../../components/BaseProvider';
 
 
-import completeIcon from '../../assets/iconTracker/icons8-checked-30.png'
+import completeIcon from '../../../assets/iconTracker/icons8-checked-30.png'
 import MapViewDirections from 'react-native-maps-directions';
 
 import MapView, { Marker, Polyline, Polygon } from 'react-native-maps';
-import pointerIcon from '../../assets/iconTracker/icons8-pointer-64.png'
+import pointerIcon from '../../../assets/iconTracker/icons8-pointer-64.png'
 
 
 export const mapStyle = [

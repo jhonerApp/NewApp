@@ -15,7 +15,7 @@ import {
 } from 'native-base';
 
 import TabMenu from './src/navigation/Tabmenu'
-import DeliveryScreen from './src/screens/DeliveryScreen'
+import DeliveryScreen from './src/screens/Driver/DeliveryScreen'
 import DeliveryStatusScreen from './src/screens/DeliveryStatusScreen'
 import HistoryDetailsScreen from './src/screens/HistoryDetailsScreen'
 
@@ -54,13 +54,13 @@ export default function App() {
 
   return (
     //initialRouteName='CreateDeliveryScreen'
-    //initialRouteName='CreateDeliveryScreen'
+    //initialRouteName='DeliveryScreen'
     <BaseProvider>
       <NavigationContainer>
-        <Stacks.Navigator screenOptions={{ cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS }}  >
+        <Stacks.Navigator screenOptions={{ cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS}} >
           <Stacks.Screen name="TabMenu" component={TabMenu} options={{ headerShown: false }} />
           <Stacks.Group screenOptions={{ presentation: 'modal' }}>
-            <Stacks.Screen name="DeliveryScreen" component={DeliveryScreen} options={{
+            {/* <Stacks.Screen name="DeliveryScreen" component={DeliveryScreen} options={{
               headerMode: 'float',
               header: (props) => {
                 return (
@@ -136,7 +136,7 @@ export default function App() {
                 )
               },
             }}
-            />
+            /> */}
             <Stacks.Screen name="DeliveryStatusScreen" component={DeliveryStatusScreen} options={{
               headerShown: false,
             }}
@@ -145,11 +145,11 @@ export default function App() {
               headerShown: false,
             }}
             />
-            <Stacks.Screen name="PackageHistoryScreen" component={PackageHistoryScreen} options={{
+            {/* <Stacks.Screen name="PackageHistoryScreen" component={PackageHistoryScreen} options={{
               headerShown: true,
               // header: (props) => <HeaderHistory {...props} title="Create Delivery" isBack={true} color="#FBFCFC" />
             }}
-            />
+            /> */}
             {/* <Stacks.Screen name="CreateDeliveryScreen" component={CreateDelivery} options={{
               header: (props) => <Header {...props} title="Create Delivery" isBack={true} color="#FBFCFC" />
             }}

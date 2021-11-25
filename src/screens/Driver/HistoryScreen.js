@@ -25,8 +25,8 @@ import {
     Box,
     VStack
 } from 'native-base';
-import BaseProvider from '../components/BaseProvider';
-import BoxImage from '../../assets/iconTracker/icons8-package-96.png'
+import BaseProvider from '../../components/BaseProvider';
+import BoxImage from '../../../assets/iconTracker/icons8-package-96.png'
 
 
 

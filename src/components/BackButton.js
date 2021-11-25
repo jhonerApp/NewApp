@@ -16,7 +16,6 @@ function BackButton(props) {
                         color={props.color}
                     />
                 </TouchableOpacity>
-               
             </View>
         </Fragment>
     )

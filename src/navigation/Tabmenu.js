@@ -7,14 +7,15 @@ import { FontAwesome, MaterialCommunityIcons, Ionicons } from '@expo/vector-icon
 
 import Home from './Home'
 import Auth from './Auth'
-import History from '../screens/HistoryScreen'
+import History from '../screens/Driver/HistoryScreen'
 import Profile from '../screens/ProfileScreen'
 
 //User
 import MyParcel from './User/MyParcel';
 import PackageHistory from './User/PackageHistory';
 
-
+//Driver
+import MyHome from './Driver/MyHome';
 
 import PackageHistoryScreen from '../screens/User/PackageHistoryScreen';
 
@@ -41,9 +42,17 @@ const TabButton = (props) => {
     )
 
 }
+// //User
+// const TabArr = [
+//     { id: 1, route: 'Home1', label: 'My Parcel', type: Ionicons, activeIcon: 'grid', inActiveIcon: 'grid-outline', component: MyParcel },
+//     { id: 4, route: 'Home', label: 'PROFILE', type: FontAwesome, activeIcon: 'user-circle-o', inActiveIcon: 'user-circle', component: Home },
+//     { id: 3, route: 'PackageHistory', label: 'Package History', type: Ionicons, activeIcon: 'newspaper', inActiveIcon: 'newspaper-outline', component: PackageHistory },
 
+// ];
+
+//Driver
 const TabArr = [
-    { id: 1, route: 'Home1', label: 'My Parcel', type: Ionicons, activeIcon: 'grid', inActiveIcon: 'grid-outline', component: MyParcel },
+    { id: 1, route: 'Home1', label: 'My Parcel', type: Ionicons, activeIcon: 'grid', inActiveIcon: 'grid-outline', component: MyHome },
     { id: 4, route: 'Home', label: 'PROFILE', type: FontAwesome, activeIcon: 'user-circle-o', inActiveIcon: 'user-circle', component: Home },
     { id: 3, route: 'PackageHistory', label: 'Package History', type: Ionicons, activeIcon: 'newspaper', inActiveIcon: 'newspaper-outline', component: PackageHistory },
 

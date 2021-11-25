@@ -29,11 +29,6 @@ function MyParcel(props) {
                     header: (props) => <Header {...props} title="Create Delivery" isBack={true} color="#FBFCFC" />
                 }}
                 />
-                <Stack.Screen name="PackageHistoryScreen" component={PackageHistoryScreen} options={{
-                    headerShown: true,
-                    // header: (props) => <HeaderHistory {...props} title="Create Delivery" isBack={true} color="#FBFCFC" />
-                }}
-                />
             </Stack.Group>
         </Stack.Navigator>
     )
