@@ -59,9 +59,7 @@ const iconData = [
     { id: 2, label: 'Delivered', type: MaterialCommunityIcons, current: truckIconCurrent, finished: truckIconFinish }, //current: 'truck-check-outline', finished: 'truck-check' },
 
 ];
-// package
-// truck-fast
-// truck-check
+
 const labels = ["Package received", "On the way", "Delivered"];
 const dummyData = {
     data: [
