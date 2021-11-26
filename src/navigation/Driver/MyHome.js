@@ -10,8 +10,11 @@ import BackButton from '../../components/BackButton';
 
 import HomeScreen from '../../screens/Driver/HomeScreen';
 import DeliveryScreen from '../../screens/Driver/DeliveryScreen';
+<<<<<<< HEAD
 import DeliveryStatusScreen from '../../screens/Driver/DeliveryStatusScreen'
 import Header from '../../components/Header'
+=======
+>>>>>>> 5d93500a93d6b2c84daf426ab2fbdaf342cee5dc
 
 
 const Stack = createStackNavigator();
@@ -38,7 +41,11 @@ const ForDelivery = (props) => {
 
 function MyHome(props) {
     return (
+<<<<<<< HEAD
         <Stack.Navigator screenOptions={{ cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS }} >
+=======
+        <Stack.Navigator screenOptions={{ cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS }} initialRouteName='DeliveryScreen'>
+>>>>>>> 5d93500a93d6b2c84daf426ab2fbdaf342cee5dc
             <Stack.Group screenOptions={{ presentation: 'modal' }}>
                 <Stack.Screen name="HomeScreen" component={HomeScreen} options={{
                     headerRight: () => <ForDelivery {...props} />,
@@ -47,10 +54,18 @@ function MyHome(props) {
                 }} />
 
                 <Stack.Screen name="DeliveryScreen" component={DeliveryScreen} options={{
+<<<<<<< HEAD
                     header: (props) => {
                         return (
                             <View style={{
                                 height: 230,
+=======
+                    headerMode: 'float',
+                    header: (props) => {
+                        return (
+                            <View style={{
+                                height: 240,
+>>>>>>> 5d93500a93d6b2c84daf426ab2fbdaf342cee5dc
                                 width: props.layout.width,
                                 backgroundColor: "#212F3D",
                                 borderBottomLeftRadius: 30,
@@ -59,6 +74,7 @@ function MyHome(props) {
 
                             }} >
 
+<<<<<<< HEAD
                                 <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingTop: 40 }}>
                                     <View>
                                         <BackButton style={{ paddingLeft: 20 }} navigate={props} isBack={true} color="#FBFCFC" />
@@ -78,6 +94,43 @@ function MyHome(props) {
                                     <View style={{ alignItems: 'center', paddingBottom: 10 }}>
                                         <Text style={{ fontFamily: 'Montserrat-Bold', color: 'white', fontSize: 25, padding: 15 }}>Delivery List</Text>
                                     </View>
+=======
+                                <View style={{ flexDirection: 'column', paddingTop: 50 }}>
+                                    <View>
+                                        <BackButton style={{ paddingLeft: 20 }} navigate={props} isBack={true} color="#FBFCFC" />
+                                    </View>
+                                    <View style={{
+                                        flex: 1,
+                                        alignItems: 'center', paddingTop: 20,
+                                        paddingBottom: 50
+
+                                    }}>
+                                        <Text style={{ fontFamily: 'Montserrat-Bold', color: 'white', fontSize: 30, padding: 15 }}>Delivery List</Text>
+                                    </View>
+                                </View>
+
+
+                                {/* <View style={{ paddingBottom: 5, flexDirection: 'column' }}>
+                                    <View style={{ paddingLeft: 20, flexDirection: 'row', justifyContent: 'space-between', paddingRight: 20 }}>
+                                        <BackButton style={{ paddingLeft: 20 }} navigate={props} isBack={true} color="#FBFCFC" />
+                                    </View>
+                                    <View style={{ alignItems: 'center', flexDirection: 'column' }}>
+                                        <View style={{ alignItems: 'center' }}>
+                                            <Text style={{ fontFamily: 'Montserrat-Bold', color: 'white', fontSize: 40 }}>Delivery List</Text>
+                                        </View>
+                                    </View>
+                                </View> */}
+
+                                <View
+                                    style={{
+                                        flexDirection: 'row',
+                                        justifyContent: 'center',
+                                        paddingRight: 30,
+                                        paddingLeft: 30,
+                                        paddingBottom: 10
+                                    }}
+                                >
+>>>>>>> 5d93500a93d6b2c84daf426ab2fbdaf342cee5dc
                                     <Input
                                         placeholder="Search for location"
                                         fontSize="14"
@@ -100,11 +153,14 @@ function MyHome(props) {
                     },
                 }}
                 />
+<<<<<<< HEAD
 
                 <Stack.Screen name="DeliveryStatusScreen" component={DeliveryStatusScreen} options={{
                     header: (props) => <Header {...props} title="For Delivery" isBack={true} color="#FBFCFC" />
                 }} 
                 />
+=======
+>>>>>>> 5d93500a93d6b2c84daf426ab2fbdaf342cee5dc
             </Stack.Group>
         </Stack.Navigator>
     )
