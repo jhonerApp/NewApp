@@ -17,11 +17,7 @@ import {
     Image,
     IconButton
 } from 'native-base';
-<<<<<<< HEAD
 
-=======
-import BaseProvider from '../../components/BaseProvider';
->>>>>>> 5d93500a93d6b2c84daf426ab2fbdaf342cee5dc
 
 import pickupIcon from '../../../assets/iconTracker/icons8-map-point-64.png'
 import dropIcon from '../../../assets/iconTracker/icons8-pickup-point-128.png'

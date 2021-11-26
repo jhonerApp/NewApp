@@ -1,14 +1,8 @@
 import React from 'react'
 
-<<<<<<< HEAD
 import { View, Text, } from 'react-native';
 import {
 
-=======
-import { StyleSheet, TouchableOpacity, View, Text, } from 'react-native';
-import {
-    MaterialIcons,
->>>>>>> 5d93500a93d6b2c84daf426ab2fbdaf342cee5dc
     FontAwesome
 } from '@expo/vector-icons';
 

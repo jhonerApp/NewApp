@@ -16,11 +16,7 @@ import {
 
 import TabMenu from './src/navigation/Tabmenu'
 import DeliveryScreen from './src/screens/Driver/DeliveryScreen'
-<<<<<<< HEAD
 // import DeliveryStatusScreen from './src/screens/Driver/DeliveryStatusScreen'
-=======
-import DeliveryStatusScreen from './src/screens/DeliveryStatusScreen'
->>>>>>> 5d93500a93d6b2c84daf426ab2fbdaf342cee5dc
 import HistoryDetailsScreen from './src/screens/HistoryDetailsScreen'
 
 
@@ -61,11 +57,7 @@ export default function App() {
     //initialRouteName='DeliveryScreen'
     <BaseProvider>
       <NavigationContainer>
-<<<<<<< HEAD
         <Stacks.Navigator screenOptions={{ cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS }} >
-=======
-        <Stacks.Navigator screenOptions={{ cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS}} >
->>>>>>> 5d93500a93d6b2c84daf426ab2fbdaf342cee5dc
           <Stacks.Screen name="TabMenu" component={TabMenu} options={{ headerShown: false }} />
           <Stacks.Group screenOptions={{ presentation: 'modal' }}>
             {/* <Stacks.Screen name="DeliveryScreen" component={DeliveryScreen} options={{
@@ -145,18 +137,11 @@ export default function App() {
               },
             }}
             /> */}
-<<<<<<< HEAD
             {/* <Stacks.Screen name="DeliveryStatusScreen" component={DeliveryStatusScreen} options={{
               headerShown: false,
             }}
             /> */}
 
-=======
-            <Stacks.Screen name="DeliveryStatusScreen" component={DeliveryStatusScreen} options={{
-              headerShown: false,
-            }}
-            />
->>>>>>> 5d93500a93d6b2c84daf426ab2fbdaf342cee5dc
             <Stacks.Screen name="HistoryDetailsScreen" component={HistoryDetailsScreen} options={{
               headerShown: false,
             }}
