@@ -24,7 +24,7 @@ function FormikInput(props) {
         <FormControl
             isInvalid={chkValid}
         >
-            <Input  variant="rounded" values={values} textAlign='right' style={{ fontFamily: 'Montserrat-Bold' }}   {...rest} />
+            <Input variant="rounded" values={values} textAlign='right' style={{ fontFamily: 'Montserrat-Bold' }}   {...rest}  />
             <FormControl.ErrorMessage leftIcon={<WarningOutlineIcon size="xs" />} _text={{ fontFamily: 'Montserrat-Bold' }} >
                 {(error != undefined && touched) ? error : null}
             </FormControl.ErrorMessage>

@@ -4,6 +4,8 @@ import { StyleSheet, TouchableOpacity, View, Text, } from 'react-native';
 import BackButton from '../BackButton'
 
 function Index(props) {
+
+    const { parentStyle, mainStyle } = props
     console.log('Index', props)
     return (
         <View style={{
@@ -13,8 +15,8 @@ function Index(props) {
             borderBottomLeftRadius: 30,
             borderBottomRightRadius: 30,
             flexDirection: 'column',
-        }}>
-            <View style={{ paddingBottom: 30, justifyContent: 'flex-start', flexDirection: 'column' }}>
+        }} {...mainStyle}>
+            <View style={{ paddingBottom: 30, justifyContent: 'flex-start', flexDirection: 'column' }} {...parentStyle}>
                 {props.isBack ?
                     <Fragment>
                         <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingTop: 40 }}>

@@ -31,9 +31,14 @@ const Tab = createBottomTabNavigator();
 
 
 const TabButton = (props) => {
+    // const { route } = route.props;
+
+
     const { id, item, onPress, accessibilityState } = props
     const focused = accessibilityState.selected
     const viewRef = useRef(null)
+
+
 
     return (
         <TouchableOpacity onPress={onPress} style={styles.container} >
@@ -43,27 +48,45 @@ const TabButton = (props) => {
     )
 
 }
-// //User
-// const TabArr = [
-//     { id: 1, route: 'Home1', label: 'My Parcel', type: Ionicons, activeIcon: 'grid', inActiveIcon: 'grid-outline', component: MyParcel },
-//     { id: 4, route: 'Home', label: 'PROFILE', type: FontAwesome, activeIcon: 'user-circle-o', inActiveIcon: 'user-circle', component: Home },
-//     { id: 3, route: 'PackageHistory', label: 'Package History', type: Ionicons, activeIcon: 'newspaper', inActiveIcon: 'newspaper-outline', component: PackageHistory },
-
-// ];
-
-//Driver
-const TabArr = [
-    { id: 4, route: 'Account', label: 'Account', type: FontAwesome, activeIcon: 'user-circle-o', inActiveIcon: 'user-circle', component: ProfileScreen },
-    { id: 1, route: 'Home', label: 'Home', type: Ionicons, activeIcon: 'grid', inActiveIcon: 'grid-outline', component: MyHome },
-
-    { id: 3, route: 'PackageHistory', label: 'Package History', type: Ionicons, activeIcon: 'newspaper', inActiveIcon: 'newspaper-outline', component: PackageHistory },
-
-];
 
 
 
 
-function TabMenu() {
+function TabMenu(props) {
+
+    // //User
+    console.log('TabMenu', props.route.params)
+    let TabArr = [];
+    if (props.route.params.role === "User") {
+        TabArr = [
+            { id: 1, route: 'MyParcel', label: 'My Parcel', type: Ionicons, activeIcon: 'grid', inActiveIcon: 'grid-outline', component: MyParcel },
+            { id: 4, route: 'ProfileScreen', label: 'PROFILE', type: FontAwesome, activeIcon: 'user-circle-o', inActiveIcon: 'user-circle', component: ProfileScreen },
+            { id: 3, route: 'PackageHistory', label: 'Package History', type: Ionicons, activeIcon: 'newspaper', inActiveIcon: 'newspaper-outline', component: PackageHistory },
+
+        ];
+    } else {
+        //Driver
+        TabArr = [
+            { id: 4, route: 'Account', label: 'Account', type: FontAwesome, activeIcon: 'user-circle-o', inActiveIcon: 'user-circle', component: ProfileScreen },
+            { id: 1, route: 'Home', label: 'Home', type: Ionicons, activeIcon: 'grid', inActiveIcon: 'grid-outline', component: MyHome },
+
+            { id: 3, route: 'PackageHistory', label: 'Package History', type: Ionicons, activeIcon: 'newspaper', inActiveIcon: 'newspaper-outline', component: PackageHistory },
+        ];
+    }
+
+
+    // TabArr = [
+    //     { id: 1, route: 'MyParcel', label: 'My Parcel', type: Ionicons, activeIcon: 'grid', inActiveIcon: 'grid-outline', component: MyParcel },
+    //     { id: 4, route: 'ProfileScreen', label: 'PROFILE', type: FontAwesome, activeIcon: 'user-circle-o', inActiveIcon: 'user-circle', component: ProfileScreen },
+    //     { id: 3, route: 'PackageHistory', label: 'Package History', type: Ionicons, activeIcon: 'newspaper', inActiveIcon: 'newspaper-outline', component: PackageHistory },
+
+    // ];
+
+
+
+
+
+    console.log('TabMenu', props)
 
     return (
 
@@ -71,6 +94,7 @@ function TabMenu() {
         <Tab.Navigator
 
             screenOptions={{
+                tabBarHideOnKeyboard: true,
                 tabBarStyle: {
                     height: 60,
                     position: 'absolute',
@@ -79,8 +103,6 @@ function TabMenu() {
                     left: 5,
                     borderRadius: 20,
                     backgroundColor: '#F4F6F6',
-
-
 
                 }
 

@@ -28,49 +28,47 @@ export default [
 
 
     Yup.object().shape({
-        // [pickFName.name]: Yup.string().required(`${pickFName.requiredMsg}`),
-        // [pickLName.name]: Yup.string().required(`${pickLName.requiredMsg}`),
-        // [pickCPnumber.name]: Yup.string().required(`${pickCPnumber.requiredMsg}`),
-        // [pickAddress.name]: Yup.string()
-        //     .nullable()
-        //     .required(`${pickAddress.requiredMsg}`),
+        [pickFName.name]: Yup.string().required(`${pickFName.requiredMsg}`),
+        [pickLName.name]: Yup.string().required(`${pickLName.requiredMsg}`),
+        [pickCPnumber.name]: Yup.string().required(`${pickCPnumber.requiredMsg}`),
+        [pickAddress.name]: Yup.string()
+            .nullable()
+            .required(`${pickAddress.requiredMsg}`),
     }),
     Yup.object().shape({
-        // [dropFName.name]: Yup.string().required(`${dropFName.requiredMsg}`),
-        // [dropLName.name]: Yup.string().required(`${dropLName.requiredMsg}`),
-        // [dropCPnumber.name]: Yup.string().required(`${dropCPnumber.requiredMsg}`),
-        // [dropAddress.name]: Yup.string()
-        //     .nullable()
-        //     .required(`${dropAddress.requiredMsg}`),
+        [dropFName.name]: Yup.string().required(`${dropFName.requiredMsg}`),
+        [dropLName.name]: Yup.string().required(`${dropLName.requiredMsg}`),
+        [dropCPnumber.name]: Yup.string().required(`${dropCPnumber.requiredMsg}`),
+        [dropAddress.name]: Yup.string()
+            .nullable()
+            .required(`${dropAddress.requiredMsg}`),
     }),
     Yup.object().shape({
-
 
         //[parcelHeight.name]: Yup.string().required(`${parcelHeight.requiredMsg}`),
 
-
-        // [parcelHeight.name]: Yup.number()
-        //     .positive("Must be more than 0")
-        //     .integer("Must be more than 0")
-        //     .required(`${parcelHeight.requiredMsg}`),
-        // [parcelWitdh.name]: Yup.number()
-        //     .positive("Must be more than 0")
-        //     .integer("Must be more than 0")
-        //     .required(`${parcelWitdh.requiredMsg}`),
-        // [parcelLength.name]: Yup.number()
-        //     .positive("Must be more than 0")
-        //     .integer("Must be more than 0")
-        //     .required(`${parcelLength.requiredMsg}`),
-        // [parcelWeigth.name]: Yup.number()
-        //     .positive("Must be more than 0")
-        //     .integer("Must be more than 0")
-        //     .required(`${parcelWeigth.requiredMsg}`),
+        [parcelHeight.name]: Yup.number()
+            .positive("Must be more than 0")
+            .integer("Must be more than 0")
+            .required(`${parcelHeight.requiredMsg}`),
+        [parcelWitdh.name]: Yup.number()
+            .positive("Must be more than 0")
+            .integer("Must be more than 0")
+            .required(`${parcelWitdh.requiredMsg}`),
+        [parcelLength.name]: Yup.number()
+            .positive("Must be more than 0")
+            .integer("Must be more than 0")
+            .required(`${parcelLength.requiredMsg}`),
+        [parcelWeigth.name]: Yup.number()
+            .positive("Must be more than 0")
+            .integer("Must be more than 0")
+            .required(`${parcelWeigth.requiredMsg}`),
         // [deliveryDate.name]: Yup.string()
         //     .required(`${deliveryDate.requiredMsg}`),
         // [deliveryTime.name]: Yup.string()
         //     .required(`${deliveryTime.requiredMsg}`),
-        // [parcelDetails.name]: Yup.string().required(`${parcelDetails.requiredMsg}`),
-        // [deliveryOption.name]: Yup.string().required(`${deliveryOption.requiredMsg}`),
+        [parcelDetails.name]: Yup.string().required(`${parcelDetails.requiredMsg}`),
+        [deliveryOption.name]: Yup.string().required(`${deliveryOption.requiredMsg}`),
     }),
 
 ]

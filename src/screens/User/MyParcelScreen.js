@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, Fragment } from 'react'
 import { Formik, useFormik } from 'formik'
 import * as Yup from "yup";
 import {
@@ -45,7 +45,7 @@ import TruckIcon from '../../../assets/iconTracker/icons8-delivery-truck-64.png'
 import VanIcon from '../../../assets/iconTracker/icons8-van-64.png'
 import BikeIcon from '../../../assets/iconTracker/icons8-bicycle-64.png'
 
-
+import { BTN_COLORS } from '../../contants/index'
 
 function MyParcelScreen(props) {
 
@@ -62,282 +62,297 @@ function MyParcelScreen(props) {
 
     return (
 
+        <Fragment>
+            <View style={{
+                flex: 1,
+                position: 'relative',
+                height: '100%',
+                width: '100%',
+                top: 10
 
-        <View style={{
-            flex: 1,
-            position: 'relative',
-            height: '100%',
-            width: '100%',
-            top: 10
+            }}>
 
-        }}>
-
-            <ScrollView>
-                <View
-                    style={{
-                        flexDirection: 'row',
-                        justifyContent: 'center',
-
-                    }}
-                >
+                <ScrollView onScroll={(e) => pressButton(e)} scrollEventThrottle={16}>
                     <View
-                        bg="info.50"
                         style={{
-                            width: '95%',
-                            height: '100%',
-                            paddingBottom: 160,
-                            borderRadius: 10,
+                            flexDirection: 'row',
+                            justifyContent: 'center',
 
                         }}
                     >
-                        {/* ITEMS */}
-                        <Stack
-                            bg="#FBFCFC"
-                            shadow={6}
-                            rounded='md'
-                            w="100%"
+                        <View
+                            bg="info.50"
                             style={{
-
-                                paddingTop: 10,
-                                flex: 1,
+                                width: '95%',
+                                height: '100%',
+                                paddingBottom: 160,
+                                borderRadius: 10,
 
                             }}
                         >
-                            <View>
-                                <View
-                                    style={{
-                                        flexDirection: 'row',
-                                        margin: 10,
-                                        justifyContent: 'space-between',
-                                    }}
-                                >
-                                    <Text style={{ fontFamily: 'Montserrat-Black' }}>
-                                        #123456
-                                    </Text>
-                                    <Text style={{ fontFamily: 'Montserrat-Light' }}>
-                                        June 21,2021
-                                    </Text>
-                                </View>
-                                <Divider />
-                                <View
-                                    style={{
-                                        flexDirection: 'row',
-                                        margin: 10,
-                                        justifyContent: 'space-between',
-                                    }}
-                                >
-                                    <View style={{ backgroundColor: '#ECF0F1', borderRadius: 10, width: 50, paddingLeft: 5 }}>
-                                        <Image source={CarIcon} height={10} width={10} alt='image' />
-                                    </View>
-                                    <View style={{ paddingRight: 100 }}>
-                                        <Text style={{ fontFamily: 'Montserrat-Bold' }}>
+                            {/* ITEMS */}
+                            <Stack
+                                bg="#FBFCFC"
+                                shadow={6}
+                                rounded='md'
+                                w="100%"
+                                style={{
+
+                                    paddingTop: 10,
+                                    flex: 1,
+
+                                }}
+                            >
+                                <View>
+                                    <View
+                                        style={{
+                                            flexDirection: 'row',
+                                            margin: 10,
+                                            justifyContent: 'space-between',
+                                        }}
+                                    >
+                                        <Text style={{ fontFamily: 'Montserrat-Black' }}>
                                             #123456
                                         </Text>
-                                        <Text style={{ fontFamily: 'Montserrat-Regular', color: 'green' }}>
-                                            Pending
+                                        <Text style={{ fontFamily: 'Montserrat-Light' }}>
+                                            June 21,2021
                                         </Text>
                                     </View>
-                                    <View>
-                                        <TouchableOpacity style={{ backgroundColor: '#34495E', borderRadius: 8, width: 60, height: 35, alignItems: 'center', }}>
-                                            <Text style={{ paddingTop: 8, fontFamily: 'Montserrat-Medium', color: 'white' }}>Accept</Text>
-                                        </TouchableOpacity>
+                                    <Divider />
+                                    <View
+                                        style={{
+                                            flexDirection: 'row',
+                                            margin: 10,
+                                            justifyContent: 'space-between',
+                                        }}
+                                    >
+                                        <View style={{ backgroundColor: '#ECF0F1', borderRadius: 10, width: 50, paddingLeft: 5 }}>
+                                            <Image source={CarIcon} height={10} width={10} alt='image' />
+                                        </View>
+                                        <View style={{ paddingRight: 100 }}>
+                                            <Text style={{ fontFamily: 'Montserrat-Bold' }}>
+                                                #123456
+                                            </Text>
+                                            <Text style={{ fontFamily: 'Montserrat-Regular', color: 'green' }}>
+                                                Pending
+                                            </Text>
+                                        </View>
+                                        <View>
+                                            <TouchableOpacity style={{ backgroundColor: BTN_COLORS.primary, borderRadius: 8, width: 60, height: 35, alignItems: 'center', }}>
+                                                <Text style={{ paddingTop: 8, fontFamily: 'Montserrat-Medium', color: 'white' }}>Accept</Text>
+                                            </TouchableOpacity>
+                                        </View>
                                     </View>
+                                    <Divider />
                                 </View>
-                                <Divider />
-                            </View>
-                        </Stack>
-                        <View style={{
-                            paddingBottom: 10,
-                            flexDirection: 'row'
-                        }}></View>
-                        {/* ITEMS */}
-                        <Stack
-                            bg="#FBFCFC"
-                            shadow={6}
-                            rounded='md'
-                            w="100%"
-                            style={{
+                            </Stack>
+                            <View style={{
+                                paddingBottom: 10,
+                                flexDirection: 'row'
+                            }}></View>
+                            {/* ITEMS */}
+                            <Stack
+                                bg="#FBFCFC"
+                                shadow={6}
+                                rounded='md'
+                                w="100%"
+                                style={{
 
-                                paddingTop: 10,
-                                flex: 1,
+                                    paddingTop: 10,
+                                    flex: 1,
 
-                            }}
-                        >
-                            <View>
-                                <View
-                                    style={{
-                                        flexDirection: 'row',
-                                        margin: 10,
-                                        justifyContent: 'space-between',
-                                    }}
-                                >
-                                    <Text style={{ fontFamily: 'Montserrat-Black' }}>
-                                        #123456
-                                    </Text>
-                                    <Text style={{ fontFamily: 'Montserrat-Light' }}>
-                                        June 21,2021
-                                    </Text>
-                                </View>
-                                <Divider />
-                                <View
-                                    style={{
-                                        flexDirection: 'row',
-                                        margin: 10,
-                                        justifyContent: 'space-between',
-                                    }}
-                                >
-                                    <View style={{ backgroundColor: '#ECF0F1', borderRadius: 10, width: 50, paddingLeft: 5 }}>
-                                        <Image source={TruckIcon} height={10} width={10} alt='image' />
-                                    </View>
-                                    <View style={{ paddingRight: 100 }}>
-                                        <Text style={{ fontFamily: 'Montserrat-Bold' }}>
+                                }}
+                            >
+                                <View>
+                                    <View
+                                        style={{
+                                            flexDirection: 'row',
+                                            margin: 10,
+                                            justifyContent: 'space-between',
+                                        }}
+                                    >
+                                        <Text style={{ fontFamily: 'Montserrat-Black' }}>
                                             #123456
                                         </Text>
-                                        <Text style={{ fontFamily: 'Montserrat-Regular', color: 'green' }}>
-                                            Pending
+                                        <Text style={{ fontFamily: 'Montserrat-Light' }}>
+                                            June 21,2021
                                         </Text>
                                     </View>
-                                    <View>
-                                        <TouchableOpacity style={{ backgroundColor: '#34495E', borderRadius: 8, width: 60, height: 35, alignItems: 'center', }}>
-                                            <Text style={{ paddingTop: 8, fontFamily: 'Montserrat-Medium', color: 'white' }}>Accept</Text>
-                                        </TouchableOpacity>
+                                    <Divider />
+                                    <View
+                                        style={{
+                                            flexDirection: 'row',
+                                            margin: 10,
+                                            justifyContent: 'space-between',
+                                        }}
+                                    >
+                                        <View style={{ backgroundColor: '#ECF0F1', borderRadius: 10, width: 50, paddingLeft: 5 }}>
+                                            <Image source={TruckIcon} height={10} width={10} alt='image' />
+                                        </View>
+                                        <View style={{ paddingRight: 100 }}>
+                                            <Text style={{ fontFamily: 'Montserrat-Bold' }}>
+                                                #123456
+                                            </Text>
+                                            <Text style={{ fontFamily: 'Montserrat-Regular', color: 'green' }}>
+                                                Pending
+                                            </Text>
+                                        </View>
+                                        <View>
+                                            <TouchableOpacity style={{ backgroundColor: BTN_COLORS.primary, borderRadius: 8, width: 60, height: 35, alignItems: 'center', }}>
+                                                <Text style={{ paddingTop: 8, fontFamily: 'Montserrat-Medium', color: 'white' }}>Accept</Text>
+                                            </TouchableOpacity>
+                                        </View>
                                     </View>
+                                    <Divider />
                                 </View>
-                                <Divider />
-                            </View>
-                        </Stack>
-                        <View style={{
-                            paddingBottom: 10,
-                            flexDirection: 'row'
-                        }}></View>
-                        {/* ITEMS */}
-                        <Stack
-                            bg="#FBFCFC"
-                            shadow={6}
-                            rounded='md'
-                            w="100%"
-                            style={{
+                            </Stack>
+                            <View style={{
+                                paddingBottom: 10,
+                                flexDirection: 'row'
+                            }}></View>
+                            {/* ITEMS */}
+                            <Stack
+                                bg="#FBFCFC"
+                                shadow={6}
+                                rounded='md'
+                                w="100%"
+                                style={{
 
-                                paddingTop: 10,
-                                flex: 1,
+                                    paddingTop: 10,
+                                    flex: 1,
 
-                            }}
-                        >
-                            <View>
-                                <View
-                                    style={{
-                                        flexDirection: 'row',
-                                        margin: 10,
-                                        justifyContent: 'space-between',
-                                    }}
-                                >
-                                    <Text style={{ fontFamily: 'Montserrat-Black' }}>
-                                        #123456
-                                    </Text>
-                                    <Text style={{ fontFamily: 'Montserrat-Light' }}>
-                                        June 21,2021
-                                    </Text>
-                                </View>
-                                <Divider />
-                                <View
-                                    style={{
-                                        flexDirection: 'row',
-                                        margin: 10,
-                                        justifyContent: 'space-between',
-                                    }}
-                                >
-                                    <View style={{ backgroundColor: '#ECF0F1', borderRadius: 10, width: 50, paddingLeft: 5 }}>
-                                        <Image source={VanIcon} height={10} width={10} alt='image' />
-                                    </View>
-                                    <View style={{ paddingRight: 100 }}>
-                                        <Text style={{ fontFamily: 'Montserrat-Bold' }}>
+                                }}
+                            >
+                                <View>
+                                    <View
+                                        style={{
+                                            flexDirection: 'row',
+                                            margin: 10,
+                                            justifyContent: 'space-between',
+                                        }}
+                                    >
+                                        <Text style={{ fontFamily: 'Montserrat-Black' }}>
                                             #123456
                                         </Text>
-                                        <Text style={{ fontFamily: 'Montserrat-Regular', color: 'green' }}>
-                                            Pending
+                                        <Text style={{ fontFamily: 'Montserrat-Light' }}>
+                                            June 21,2021
                                         </Text>
                                     </View>
-                                    <View>
-                                        <TouchableOpacity style={{ backgroundColor: '#34495E', borderRadius: 8, width: 60, height: 35, alignItems: 'center', }}>
-                                            <Text style={{ paddingTop: 8, fontFamily: 'Montserrat-Medium', color: 'white' }}>Accept</Text>
-                                        </TouchableOpacity>
+                                    <Divider />
+                                    <View
+                                        style={{
+                                            flexDirection: 'row',
+                                            margin: 10,
+                                            justifyContent: 'space-between',
+                                        }}
+                                    >
+                                        <View style={{ backgroundColor: '#ECF0F1', borderRadius: 10, width: 50, paddingLeft: 5 }}>
+                                            <Image source={VanIcon} height={10} width={10} alt='image' />
+                                        </View>
+                                        <View style={{ paddingRight: 100 }}>
+                                            <Text style={{ fontFamily: 'Montserrat-Bold' }}>
+                                                #123456
+                                            </Text>
+                                            <Text style={{ fontFamily: 'Montserrat-Regular', color: 'green' }}>
+                                                Pending
+                                            </Text>
+                                        </View>
+                                        <View>
+                                            <TouchableOpacity style={{ backgroundColor: BTN_COLORS.primary, borderRadius: 8, width: 60, height: 35, alignItems: 'center', }}>
+                                                <Text style={{ paddingTop: 8, fontFamily: 'Montserrat-Medium', color: 'white' }}>Accept</Text>
+                                            </TouchableOpacity>
+                                        </View>
                                     </View>
+                                    <Divider />
                                 </View>
-                                <Divider />
-                            </View>
-                        </Stack>
-                        <View style={{
-                            paddingBottom: 10,
-                            flexDirection: 'row'
-                        }}></View>
+                            </Stack>
+                            <View style={{
+                                paddingBottom: 10,
+                                flexDirection: 'row'
+                            }}></View>
 
-                        {/* ITEMS */}
-                        <Stack
-                            bg="#FBFCFC"
-                            shadow={6}
-                            rounded='md'
-                            w="100%"
-                            style={{
+                            {/* ITEMS */}
+                            <Stack
+                                bg="#FBFCFC"
+                                shadow={6}
+                                rounded='md'
+                                w="100%"
+                                style={{
 
-                                paddingTop: 10,
-                                flex: 1,
+                                    paddingTop: 10,
+                                    flex: 1,
 
-                            }}
-                        >
-                            <View>
-                                <View
-                                    style={{
-                                        flexDirection: 'row',
-                                        margin: 10,
-                                        justifyContent: 'space-between',
-                                    }}
-                                >
-                                    <Text style={{ fontFamily: 'Montserrat-Black' }}>
-                                        #123456
-                                    </Text>
-                                    <Text style={{ fontFamily: 'Montserrat-Light' }}>
-                                        June 21,2021
-                                    </Text>
-                                </View>
-                                <Divider />
-                                <View
-                                    style={{
-                                        flexDirection: 'row',
-                                        margin: 10,
-                                        justifyContent: 'space-between',
-                                    }}
-                                >
-                                    <View style={{ backgroundColor: '#ECF0F1', borderRadius: 10, width: 50, paddingLeft: 5 }}>
-                                        <Image source={BikeIcon} height={10} width={10} alt='image' />
-                                    </View>
-                                    <View style={{ paddingRight: 100 }}>
-                                        <Text style={{ fontFamily: 'Montserrat-Bold' }}>
+                                }}
+                            >
+                                <View>
+                                    <View
+                                        style={{
+                                            flexDirection: 'row',
+                                            margin: 10,
+                                            justifyContent: 'space-between',
+                                        }}
+                                    >
+                                        <Text style={{ fontFamily: 'Montserrat-Black' }}>
                                             #123456
                                         </Text>
-                                        <Text style={{ fontFamily: 'Montserrat-Regular', color: 'green' }}>
-                                            Pending
+                                        <Text style={{ fontFamily: 'Montserrat-Light' }}>
+                                            June 21,2021
                                         </Text>
                                     </View>
-                                    <View>
-                                        <TouchableOpacity style={{ backgroundColor: '#34495E', borderRadius: 8, width: 60, height: 35, alignItems: 'center', }}>
-                                            <Text style={{ paddingTop: 8, fontFamily: 'Montserrat-Medium', color: 'white' }}>Accept</Text>
-                                        </TouchableOpacity>
+                                    <Divider />
+                                    <View
+                                        style={{
+                                            flexDirection: 'row',
+                                            margin: 10,
+                                            justifyContent: 'space-between',
+                                        }}
+                                    >
+                                        <View style={{ backgroundColor: '#ECF0F1', borderRadius: 10, width: 50, paddingLeft: 5 }}>
+                                            <Image source={BikeIcon} height={10} width={10} alt='image' />
+                                        </View>
+                                        <View style={{ paddingRight: 100 }}>
+                                            <Text style={{ fontFamily: 'Montserrat-Bold' }}>
+                                                #123456
+                                            </Text>
+                                            <Text style={{ fontFamily: 'Montserrat-Regular', color: 'green' }}>
+                                                Pending
+                                            </Text>
+                                        </View>
+                                        <View>
+                                            <TouchableOpacity style={{ backgroundColor: BTN_COLORS.primary, borderRadius: 8, width: 60, height: 35, alignItems: 'center', }}>
+                                                <Text style={{ paddingTop: 8, fontFamily: 'Montserrat-Medium', color: 'white' }}>Accept</Text>
+                                            </TouchableOpacity>
+                                        </View>
                                     </View>
+                                    <Divider />
                                 </View>
-                                <Divider />
-                            </View>
-                        </Stack>
-                        <View style={{
-                            paddingBottom: 10,
-                            flexDirection: 'row'
-                        }}></View>
+                            </Stack>
+                            <View style={{
+                                paddingBottom: 10,
+                                flexDirection: 'row'
+                            }}></View>
 
+                        </View >
                     </View >
-                </View >
-            </ScrollView >
-        </View >
-
+                </ScrollView >
+            </View >
+        </Fragment>
     )
 }
 
+const styles = StyleSheet.create({
+    tabBarShow: {
+        height: 60,
+        position: 'absolute',
+        bottom: 10,
+        right: 5,
+        left: 5,
+        borderRadius: 20,
+        backgroundColor: '#F4F6F6',
+        borderColor: '#2E4053',
+    },
+    tabBarHide: {
+        display: 'none'
+    }
+})
 export default MyParcelScreen

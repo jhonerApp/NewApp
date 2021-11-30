@@ -20,17 +20,21 @@ const Stack = createStackNavigator();
 
 function MyParcel(props) {
     return (
-        <Stack.Navigator screenOptions={{ cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS }}>
-            <Stack.Group screenOptions={{ presentation: 'modal' }}>
-                <Stack.Screen name="MyParcelScreen" component={MyParcelScreen} options={{
-                    header: (props) => <HeaderParcel {...props} />
-                }} />
-                <Stack.Screen name="CreateDeliveryScreen" component={CreateDelivery} options={{
-                    header: (props) => <Header {...props} title="Create Delivery" isBack={true} color="#FBFCFC" />
-                }}
-                />
-            </Stack.Group>
-        </Stack.Navigator>
+        <Fragment>
+            <Stack.Navigator screenOptions={{ cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS }}>
+                <Stack.Group screenOptions={{ presentation: 'modal' }}>
+                    <Stack.Screen name="MyParcelScreen" component={MyParcelScreen} options={{
+                        headerShown: true,
+                        header: (props) => <HeaderParcel {...props} />
+                    }} />
+                    <Stack.Screen name="CreateDeliveryScreen" component={CreateDelivery} options={{
+                        headerShown: true,
+                        header: (props) => <Header {...props} title="Create Delivery" isBack={true} color="#FBFCFC" />
+                    }}
+                    />
+                </Stack.Group>
+            </Stack.Navigator>
+        </Fragment>
     )
 }
 

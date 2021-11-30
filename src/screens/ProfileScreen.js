@@ -25,9 +25,9 @@ import {
 import StarRating from 'react-native-star-rating-widget';
 import { height } from 'styled-system';
 
-import AccountIcon from '../../assets/iconTracker/icons8-test-account-64.png'
-import SettingIcon from '../../assets/iconTracker/icons8-settings-50.png'
-import HelpIcon from '../../assets/iconTracker/icons8-about-50.png'
+import AccountIcon from '../../assets/iconTracker/icons8-test-account-100.png'
+import SettingIcon from '../../assets/iconTracker/icons8-services-100.png'
+import HelpIcon from '../../assets/iconTracker/icons8-about-100.png'
 
 import TruckIcon from '../../assets/iconTracker/icons8-delivery-truck-64.png'
 
@@ -39,7 +39,7 @@ function ProfileScreen(props) {
     console.log('DeviceHeight', DeviceHeight)
     console.log('DeviceWitdh', DeviceWitdh)
 
-    const [rating, setRating] = useState(3);
+    const [rating, setRating] = useState(3.5);
 
 
 
@@ -126,12 +126,12 @@ function ProfileScreen(props) {
                                 >
                                     <Flex style={{ margin: 10, flexDirection: 'row', justifyContent: 'space-between', paddingTop: 5 }}>
                                         <View style={{ paddingLeft: 5 }}>
-                                            <Image source={AccountIcon} height={20} width={20} alt='image' />
+                                            <Image source={AccountIcon} size='sm' alt='image' />
                                         </View>
-                                        <View style={{ paddingTop: 25, flexDirection: 'row', paddingRight: 120 }}>
+                                        <View style={{ paddingTop: 20, flexDirection: 'row', paddingRight: 120 }}>
                                             <Text style={{ fontFamily: 'Montserrat-Bold', paddingLeft: 10, fontSize: 15, }}>Account</Text>
                                         </View>
-                                        <View style={{ paddingTop: 25, paddingRight: 10 }}>
+                                        <View style={{ paddingTop: 20, paddingRight: 10 }}>
                                             <AntDesign
                                                 name="caretright"
                                                 size={24}
@@ -155,12 +155,12 @@ function ProfileScreen(props) {
                                 >
                                     <Flex style={{ margin: 10, flexDirection: 'row', justifyContent: 'space-between', paddingTop: 5 }}>
                                         <View style={{ paddingLeft: 5 }}>
-                                            <Image source={SettingIcon} height={20} width={20} alt='image' />
+                                            <Image source={SettingIcon} size='sm' alt='image' />
                                         </View>
-                                        <View style={{ paddingTop: 25, flexDirection: 'row', paddingRight: 120 }}>
+                                        <View style={{ paddingTop: 20, flexDirection: 'row', paddingRight: 120 }}>
                                             <Text style={{ fontFamily: 'Montserrat-Bold', paddingLeft: 10, fontSize: 15, }}>Settings</Text>
                                         </View>
-                                        <View style={{ paddingTop: 25, paddingRight: 10 }}>
+                                        <View style={{ paddingTop: 20, paddingRight: 10 }}>
                                             <AntDesign
                                                 name="caretright"
                                                 size={24}
@@ -177,33 +177,33 @@ function ProfileScreen(props) {
 
 
                             <TouchableOpacity>
-                            <Stack
-                                bg="#FBFCFC"
-                                shadow={4}
-                                rounded='md'
+                                <Stack
+                                    bg="#FBFCFC"
+                                    shadow={4}
+                                    rounded='md'
 
-                            >
-                                <Flex style={{ margin: 10, flexDirection: 'row', justifyContent: 'space-between', paddingTop: 5 }}>
-                                    <View style={{ paddingLeft: 5 }}>
-                                        <Image source={HelpIcon} height={20} width={20} alt='image' />
-                                    </View>
-                                    <View style={{ paddingTop: 25, flexDirection: 'row', paddingRight: 120 }}>
-                                        <Text style={{ fontFamily: 'Montserrat-Bold', paddingLeft: 10, fontSize: 15, }}>Help</Text>
-                                    </View>
-                                    <View style={{ paddingTop: 25, paddingRight: 10 }}>
-                                        <AntDesign
-                                            name="caretright"
-                                            size={24}
-                                            color="#212F3D"
-                                        />
-                                    </View>
-                                </Flex>
-                            </Stack>
-                        </TouchableOpacity>
-                        <View style={{
-                            paddingBottom: 10,
-                            flexDirection: 'row'
-                        }}></View>
+                                >
+                                    <Flex style={{ margin: 10, flexDirection: 'row', justifyContent: 'space-between', paddingTop: 5 }}>
+                                        <View style={{ paddingLeft: 5 }}>
+                                            <Image source={HelpIcon} size='sm' alt='image' />
+                                        </View>
+                                        <View style={{ paddingTop: 20, flexDirection: 'row', paddingRight: 120 }}>
+                                            <Text style={{ fontFamily: 'Montserrat-Bold', paddingLeft: 10, fontSize: 15, }}>Help</Text>
+                                        </View>
+                                        <View style={{ paddingTop: 20, paddingRight: 10 }}>
+                                            <AntDesign
+                                                name="caretright"
+                                                size={24}
+                                                color="#212F3D"
+                                            />
+                                        </View>
+                                    </Flex>
+                                </Stack>
+                            </TouchableOpacity>
+                            <View style={{
+                                paddingBottom: 10,
+                                flexDirection: 'row'
+                            }}></View>
 
                         </View>
                     </ScrollView>

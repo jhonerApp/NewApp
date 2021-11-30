@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef, useEffect, Fragment } from 'react'
 import { Formik, useFormik } from 'formik'
 import * as Yup from "yup";
 import {
@@ -34,14 +34,7 @@ import moment from 'moment';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import { useIsFocused, useScrollToTop } from "@react-navigation/native"
 
-import BackButton from '../../components/BackButton'
-import HeaderProvider from '../../components/HeaderProvider'
 import BaseProvider from '../../components/BaseProvider'
-import DatePicker from '../../utils/DatePicker';
-import Timepicker from '../../utils/Timepicker';
-import FormikInput from '../../utils/FormikInput';
-import FormikRadio from '../../utils/FormikRadio';
-
 
 
 import CreatePickUp from '../../components/FormDelivery/CreatePickUp';
@@ -52,7 +45,7 @@ import ValidationSchema from '../../components/FormModel/Delivery/ValidationSche
 import FormInitialValues from '../../components/FormModel/Delivery/FormInitialValues';
 import CreatePackageModel from '../../components/FormModel/Delivery/CreatePackageModel';
 
-
+import { BTN_COLORS } from '../../contants/index'
 
 
 
@@ -71,34 +64,27 @@ function CreateDelivery(props) {
     const scrollViewRef = useRef(null);
 
     useEffect(() => {
-
-        if (isFocused) {
-            scrollViewRef.current.scrollTo({ y: 0 });
-        }
-
-    
+        // if (isFocused) {
+        //     scrollViewRef.current.scrollTo({ y: 0 });
+        // }
+        scrollViewRef.current.scrollTo({ y: 0 });
     }, [currentActivePage])
-
-    // useScrollToTop(useRef({
-    //     scrollToTop: () => scrollViewRef.current?.scrollToOffset({ offset: 100}),
-    // }));
-
 
     const [groupValue, setGroupValue] = useState('')
     //https://github.com/nphivu414/react-multi-step-form/blob/master/src/components/CheckoutPage/Forms/AddressForm.jsx
     //https://medium.com/@nphivu414/build-a-multi-step-form-with-react-hooks-formik-yup-and-materialui-fa4f73545598
-
 
     const formik = useFormik({
         validationSchema: currentValidationSchema,
         initialValues: FormInitialValues,
         onSubmit: (values, actions) => {
             // alert(JSON.stringify(values, null, 2))
-            console.log(JSON.stringify(values))
+            //console.log(JSON.stringify(values))
 
             if (lastActivePage) {
                 submitForm(values, actions)
-                console.log('if', lastActivePage)
+
+
             } else {
                 actions.setTouched({})
                 actions.setSubmitting(false)
@@ -120,9 +106,13 @@ function CreateDelivery(props) {
     const submitForm = async (values, actions) => {
         await _sleep(1000)
         actions.setSubmitting(false);
+        // setActivePage(currentActivePage + 1)
         console.log('submitForm', currentActivePage)
         console.log('submitForm props', props)
-        props.navigation.navigate('TabMenu')
+        props.navigation.navigate("MyParcelScreen")
+        // props.navigation.navigate('TabMenu', {
+        //     role: 'User',
+        // })
     }
 
     function _sleep(ms) {
@@ -161,7 +151,7 @@ function CreateDelivery(props) {
 
 
     return (
-        <BaseProvider>
+        <Fragment>
             {/* <KeyboardAwareScrollView> */}
             {/* <HeaderProvider styles={styles.container}>
                     <View style={{ paddingBottom: 30, justifyContent: 'flex-start', flexDirection: 'column' }}>
@@ -240,7 +230,7 @@ function CreateDelivery(props) {
                                                 style={{
                                                     flexDirection: 'row',
                                                     justifyContent: 'center',
-                                                    backgroundColor: '#2980B9',
+                                                    backgroundColor: BTN_COLORS.primary,
                                                     padding: 12,
                                                     width: '100%',
                                                     borderRadius: 20,
@@ -249,15 +239,16 @@ function CreateDelivery(props) {
                                                 onPress={formik.handleSubmit}
 
                                             >
-                                                <AntDesign
-                                                    name="addfile"
+                                                <Text style={{ fontFamily: 'Montserrat-Medium', color: 'white', fontSize: 15, paddingTop: 1, paddingRight: 5 }}>
+                                                    {lastActivePage ? 'BOOK' : 'NEXT'}
+                                                </Text>
+
+                                                <MaterialCommunityIcons
+                                                    name="skip-next"
                                                     size={24}
                                                     color="#FDFEFE"
                                                     style={{ width: 40 }}
                                                 />
-                                                <Text style={{ fontFamily: 'Montserrat-Medium', color: 'white', fontSize: 15 }}>
-                                                    {lastActivePage ? 'BOOK' : 'NEXT'}
-                                                </Text>
                                             </TouchableOpacity>
                                         </View>
 
@@ -280,7 +271,7 @@ function CreateDelivery(props) {
                 </ScrollView>
             </View>
             {/* </KeyboardAwareScrollView> */}
-        </BaseProvider >
+        </Fragment >
 
     )
 }
