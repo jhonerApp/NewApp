@@ -21,8 +21,10 @@ import HistoryDetailsScreen from './src/screens/HistoryDetailsScreen'
 import LoginScreen from './src/screens/LoginScreen';
 import RegisterScreen from './src/screens/RegisterScreen';
 import Header from './src/components/Header'
-import Onboarding from './src/screens/Main/Onboarding';
+import HeaderSuccess from './src/components/Header/User/HeaderSuccess';
 
+import Onboarding from './src/screens/Main/Onboarding';
+import DeliveryReceiptScreen from './src/screens/User/DeliveryReceiptScreen';
 //User
 import PackageHistoryScreen from './src/screens/User/PackageHistoryScreen';
 import HeaderHistory from './src/components/Header/User/HeaderHistory';
@@ -82,11 +84,13 @@ export default function App() {
 
   return (
     //initialRouteName='CreateDeliveryScreen'
-    //initialRouteName='DeliveryScreen'
+    //initialRouteName={screenPage}
+
+    //DeliveryReceiptScreen
     <Fragment>
       <BaseProvider>
         <NavigationContainer>
-          <Stacks.Navigator screenOptions={{ cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS }} initialRouteName={screenPage}>
+          <Stacks.Navigator screenOptions={{ cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS }} initialRouteName='DeliveryReceiptScreen'>
             <Stacks.Screen name="TabMenu" component={TabMenu} options={{ headerShown: false }} />
             <Stacks.Group screenOptions={{ presentation: 'modal' }}>
               <Stacks.Screen name="Onboarding" component={Onboarding} options={{
@@ -97,12 +101,16 @@ export default function App() {
                 headerShown: false,
               }}
               />
+              <Stacks.Screen name="DeliveryReceiptScreen" component={DeliveryReceiptScreen} options={{
+                header: (props) => <HeaderSuccess {...props} title="PARCEL CREATED"  color="#FBFCFC" />
+              }}
+              />
               <Stacks.Screen name="LoginScreen" component={LoginScreen} options={{
                 headerShown: false,
               }}
               />
               <Stacks.Screen name="RegisterScreen" component={RegisterScreen} options={{
-                header: (props) => <Header {...props} title="Create Account" isBack={true} color="#FBFCFC" parentStyle={{ style: styles.headerRgister }} mainStyle={{ style: styles.headerMain }} />
+                header: (props) => <Header {...props} title="Create Account" isBack={true} color="#FBFCFC" parentStyle={{ style: styles.headerParentRgister }} mainStyle={{ style: styles.headerMainRgister }} />
               }}
               />
             </Stacks.Group>
@@ -114,11 +122,12 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-  headerRgister: {
+  headerParentRgister: {
     paddingTop: 10
   },
-  headerMain: {
+  headerMainRgister: {
     backgroundColor: '#273746',
     height: 120,
-  }
+  },
+ 
 })

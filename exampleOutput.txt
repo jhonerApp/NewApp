@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;
+}
+</style>
+</head>
+<body>
+
+
+<h2>Vertical Headings:</h2>
+
+<table style="width:60%">
+
+  <tr>
+    <th style="width:90px">FROM:</th>
+    <td>23 F E. Jacinto St West Rembo Makati City 23 F E. Jacinto St West Rembo Makati City</td>
+  </tr>
+  <tr>
+    <th>TO:</th>
+    <td>Block 32 Lot 5 Lancaster new city Cavite City</td>
+  </tr>
+   <tr style="height:80px">
+    <th >Logo</th>
+    <td >Block 32 Lot 5 Lancaster new city Cavite City</td>
+  </tr>
+</table>
+
+</body>
+</html>

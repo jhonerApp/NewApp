@@ -12,12 +12,11 @@ import Profile from '../screens/ProfileScreen'
 
 //User
 import MyParcel from './User/MyParcel';
-import PackageHistory from './User/PackageHistory';
-
+import PackageHistoryScreen from '../screens/User/PackageHistoryScreen';
+import PackageHistory from './User/PackageHistory'
 //Driver
 import MyHome from './Driver/MyHome';
 
-import PackageHistoryScreen from '../screens/User/PackageHistoryScreen';
 
 //Header
 import HeaderParcel from '../components/Header/User/HeaderParcel';
@@ -55,32 +54,32 @@ const TabButton = (props) => {
 function TabMenu(props) {
 
     // //User
-    console.log('TabMenu', props.route.params)
-    let TabArr = [];
-    if (props.route.params.role === "User") {
-        TabArr = [
-            { id: 1, route: 'MyParcel', label: 'My Parcel', type: Ionicons, activeIcon: 'grid', inActiveIcon: 'grid-outline', component: MyParcel },
-            { id: 4, route: 'ProfileScreen', label: 'PROFILE', type: FontAwesome, activeIcon: 'user-circle-o', inActiveIcon: 'user-circle', component: ProfileScreen },
-            { id: 3, route: 'PackageHistory', label: 'Package History', type: Ionicons, activeIcon: 'newspaper', inActiveIcon: 'newspaper-outline', component: PackageHistory },
+    // console.log('TabMenu', props.route.params)
+     let TabArr = [];
+    // if (props.route.params.role === "User") {
+    //     TabArr = [
+    //         { id: 1, route: 'MyParcel', label: 'My Parcel', type: Ionicons, activeIcon: 'grid', inActiveIcon: 'grid-outline', component: MyParcel },
+    //         { id: 4, route: 'ProfileScreen', label: 'PROFILE', type: FontAwesome, activeIcon: 'user-circle-o', inActiveIcon: 'user-circle', component: ProfileScreen },
+    //         { id: 3, route: 'PackageHistory', label: 'Package History', type: Ionicons, activeIcon: 'newspaper', inActiveIcon: 'newspaper-outline', component: PackageHistory },
 
-        ];
-    } else {
-        //Driver
-        TabArr = [
-            { id: 4, route: 'Account', label: 'Account', type: FontAwesome, activeIcon: 'user-circle-o', inActiveIcon: 'user-circle', component: ProfileScreen },
-            { id: 1, route: 'Home', label: 'Home', type: Ionicons, activeIcon: 'grid', inActiveIcon: 'grid-outline', component: MyHome },
+    //     ];
+    // } else {
+    //     //Driver
+    //     TabArr = [
+    //         { id: 4, route: 'Account', label: 'Account', type: FontAwesome, activeIcon: 'user-circle-o', inActiveIcon: 'user-circle', component: ProfileScreen },
+    //         { id: 1, route: 'Home', label: 'Home', type: Ionicons, activeIcon: 'grid', inActiveIcon: 'grid-outline', component: MyHome },
 
-            { id: 3, route: 'PackageHistory', label: 'Package History', type: Ionicons, activeIcon: 'newspaper', inActiveIcon: 'newspaper-outline', component: PackageHistory },
-        ];
-    }
+    //         { id: 3, route: 'PackageHistory', label: 'Package History', type: Ionicons, activeIcon: 'newspaper', inActiveIcon: 'newspaper-outline', component: PackageHistory },
+    //     ];
+    // }
 
 
-    // TabArr = [
-    //     { id: 1, route: 'MyParcel', label: 'My Parcel', type: Ionicons, activeIcon: 'grid', inActiveIcon: 'grid-outline', component: MyParcel },
-    //     { id: 4, route: 'ProfileScreen', label: 'PROFILE', type: FontAwesome, activeIcon: 'user-circle-o', inActiveIcon: 'user-circle', component: ProfileScreen },
-    //     { id: 3, route: 'PackageHistory', label: 'Package History', type: Ionicons, activeIcon: 'newspaper', inActiveIcon: 'newspaper-outline', component: PackageHistory },
+    TabArr = [
+        { id: 1, route: 'MyParcel', label: 'My Parcel', type: Ionicons, activeIcon: 'grid', inActiveIcon: 'grid-outline', component: MyParcel },
+        { id: 4, route: 'ProfileScreen', label: 'PROFILE', type: FontAwesome, activeIcon: 'user-circle-o', inActiveIcon: 'user-circle', component: ProfileScreen },
+        { id: 3, route: 'PackageHistory', label: 'Package History', type: Ionicons, activeIcon: 'newspaper', inActiveIcon: 'newspaper-outline', component: PackageHistory },
 
-    // ];
+    ];
 
 
 

@@ -3,7 +3,7 @@ import { Text, View, StyleSheet, TouchableOpacity } from 'react-native'
 
 import { createStackNavigator, CardStyleInterpolators } from '@react-navigation/stack';
 import MyParcelScreen from '../../screens/User/MyParcelScreen'
-import CreateDelivery from '../../screens/User/CreateDelivery'
+import CreateDeliveryScreen from '../../screens/User/CreateDeliveryScreen'
 import PackageHistoryScreen from '../../screens/User/PackageHistoryScreen';
 
 
@@ -21,13 +21,13 @@ const Stack = createStackNavigator();
 function MyParcel(props) {
     return (
         <Fragment>
-            <Stack.Navigator screenOptions={{ cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS }}>
+            <Stack.Navigator screenOptions={{ cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS }} >
                 <Stack.Group screenOptions={{ presentation: 'modal' }}>
                     <Stack.Screen name="MyParcelScreen" component={MyParcelScreen} options={{
                         headerShown: true,
                         header: (props) => <HeaderParcel {...props} />
                     }} />
-                    <Stack.Screen name="CreateDeliveryScreen" component={CreateDelivery} options={{
+                    <Stack.Screen name="CreateDeliveryScreen" component={CreateDeliveryScreen} options={{
                         headerShown: true,
                         header: (props) => <Header {...props} title="Create Delivery" isBack={true} color="#FBFCFC" />
                     }}
